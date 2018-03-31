@@ -2,15 +2,14 @@ import telebot
 
 from Bayes import predict
 
-token = '407983248:AAGoNA--4lrX7FuflwW47Q7Z1Kdh83CMGBo'
+token = '481955063:AAGwRfDppnW9FH2LeTUKb6OS9RquTbd3ijs'
 
 bot = telebot.TeleBot(token)
-data = []
 
 
 @bot.message_handler(content_types=["text"])
 def repeat_all_messages(message):
-    bot.send_message(message.chat.id,str(predict([message.text])[0][0]))
+    bot.send_message(message.chat.id,str(predict([message.text])[0][1]))
 
 
 bot.polling(none_stop=True)
